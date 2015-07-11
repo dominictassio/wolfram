@@ -15,7 +15,7 @@ Technology Used:
 Goals:
 - [x] Display of webpages
 - [ ] Working history
-- [ ] Support for ```html <meta name="theme-color" content="...">```
+- [ ] Support for ```<meta name="theme-color" content="...">```
 - [ ] Material theme
   - [x] Navigation bar
   - [ ] Tabs
