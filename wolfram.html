@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Neutrino</title>
+    <title>Wolfram</title>
 
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="elements/elements.html">
@@ -14,7 +14,7 @@
         }
         .page {
             width: 100vw;
-            height: calc(100vh - 64px - 48px);
+            height: calc(100vh - 64px/* - 48px*/);
         }
         webview {
             overflow: hidden;
@@ -23,7 +23,7 @@
 
     <style is="custom-style">
         :root {
-            --paper-toolbar-background: white;
+            --paper-toolbar-background: #eee;
             --paper-toolbar-color: #333;
         }
 
@@ -34,6 +34,9 @@
         .title {
             pointer-events: auto;
         }
+        .title neutrino-bar {
+            width: calc(100vw - 202px);
+        }
     </style>
 
 </head>
@@ -42,7 +45,7 @@
     <paper-header-panel class="flex" mode="scroll">
         <div class="paper-header">
             <paper-toolbar>
-                <paper-icon-button icon="arrow-back"></paper-icon-button>
+                <paper-icon-button icon="arrow-back" onclick="window.webview.goBack();"></paper-icon-button>
                 <paper-icon-button icon="arrow-forward"></paper-icon-button>
 
                 <paper-icon-button icon="home"></paper-icon-button>
@@ -75,6 +78,12 @@
             webview.src = "https://google.com";
 
             page.appendChild(webview);
+
+            webview.addEventListener("dom-ready", function() {
+                window.webview = webview;
+                document.getElementById("url-bar").value = webview.getUrl();
+                document.title = "Wolfram - " + webview.getTitle();
+            });
         };
     </script>
 
