@@ -41,7 +41,7 @@
 
     <template>
 
-        <input type="text" id="url-bar">
+        <input type="text" id="url-bar" onkeydown="if (event.keyCode == 13) window.webview.src = this.value;">
 
     </template>
 
