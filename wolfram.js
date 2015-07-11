@@ -13,7 +13,7 @@ app.on("window-all-closed", function() {
 
 app.on("ready", function() {
     mainWindow = new BrowserWindow({});
-    mainWindow.loadUrl("file://" + __dirname + "/neutrino.html");
+    mainWindow.loadUrl("file://" + __dirname + "/wolfram.html");
 
     mainWindow.on("closed", function() {
         mainWindow = null;
