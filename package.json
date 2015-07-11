@@ -1,0 +1,16 @@
+{
+  "name": "wolfram",
+  "version": "0.0.1",
+  "description": "A material design themed web browser",
+  "main": "wolfram.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "Dominic Tassio <dominic.tassio@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "electron-prebuilt": "^0.28.3"
+  },
+  "private": true
+}
