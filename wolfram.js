@@ -1,5 +1,5 @@
 var app = require("app");
-var BrowserWindow = require("browser-window")
+var BrowserWindow = require("browser-window");
 
 require("crash-reporter").start();
 
@@ -12,7 +12,7 @@ app.on("window-all-closed", function() {
 });
 
 app.on("ready", function() {
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({"auto-hide-menu-bar": true});
     mainWindow.loadUrl("file://" + __dirname + "/wolfram.html");
 
     mainWindow.on("closed", function() {
