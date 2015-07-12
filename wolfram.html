@@ -34,7 +34,7 @@
         .title {
             pointer-events: auto;
         }
-        .title neutrino-bar {
+        .title wolfram-bar {
             width: calc(100vw - 202px);
         }
     </style>
@@ -51,7 +51,7 @@
                 <paper-icon-button icon="home"></paper-icon-button>
 
                 <div class="title">
-                    <neutrino-bar></neutrino-bar>
+                    <wolfram-bar></wolfram-bar>
                 </div>
 
                 <paper-icon-button icon="more-vert"></paper-icon-button>
@@ -71,7 +71,7 @@
         window.onload = function() {
             var $ = document.querySelector.bind(document);
 
-            var bar = $("neutrino-bar");
+            var bar = $("wolfram-bar");
             var page = $(".page");
 
             var webview = document.createElement("webview");
