@@ -26,9 +26,19 @@ window.onload = function() {
 
     webview.addEventListener("dom-ready", function() {
         window.home = "https://www.google.com";
-        window.webview = webview;
-        $bar.where = webview.getUrl();
-        document.title = "Wolfram - " + webview.getTitle();
+        window.webview = this;
+        $bar.where = this.getUrl();
+        document.title = "Wolfram - " + this.getTitle();
+
+        controls.back.disabled = !this.canGoBack();
+        controls.forward.disabled = !this.canGoForward();
+
+        // Why doesn't this work?
+        /*this.executeJavaScript({
+            code: "document.querySelector('meta[name=theme-color]').content"
+        }, function(result) {
+            console.log(result);
+        });*/
     });
 };
 
