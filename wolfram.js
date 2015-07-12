@@ -13,7 +13,7 @@ app.on("window-all-closed", function() {
 
 app.on("ready", function() {
     mainWindow = new BrowserWindow({"auto-hide-menu-bar": true});
-    mainWindow.loadUrl("file://" + __dirname + "/wolfram.html");
+    mainWindow.loadUrl("file://" + __dirname + "/browser.html");
 
     mainWindow.on("closed", function() {
         mainWindow = null;

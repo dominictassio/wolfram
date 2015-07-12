@@ -1,5 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="stylesheet" href="../../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../../bower_components/iron-a11y-keys/iron-a11y-keys.html">
+<link rel="import" href="../../bower_componenets/iron-input/iron-input.html">
+<link rel="import" href="../../bower_components/paper-styles/shadow.html">
 
 <dom-module id="wolfram-bar">
 
@@ -41,7 +43,12 @@
 
     <template>
 
-        <input type="text" id="url-bar" onkeydown="if (event.keyCode == 13) window.webview.src = this.value;">
+        <iron-a11y-keys
+            id="keys"
+            keys="enter"
+            on-keys-pressed="_navigateURL">
+        </iron-a11y-keys>
+        <input is="iron-input" bind-value="{{where}}">
 
     </template>
 
@@ -50,7 +57,16 @@
 <script>
 
     Polymer({
-        is: "wolfram-bar"
+        is: "wolfram-bar",
+        properties: {
+            where: {
+                type: String,
+                value: ""
+            }
+        },
+        _navigateURL: function(event) {
+            window.webview.src = this.where;
+        }
     });
 
 </script>
