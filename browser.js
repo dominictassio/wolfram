@@ -1,10 +1,7 @@
 window.onload = function() {
-    var remote = require('remote');
-    var normalizeURL = remote.require('normalize-url');
-
     var $ = document.querySelector.bind(document);
 
-    var $bar = $("wolfram-bar");
+    var $bar = $("wolfram-input");
     var $page = $(".page");
     
     var controls = {

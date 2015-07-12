@@ -14,7 +14,7 @@
         }
         .page {
             width: 100vw;
-            height: calc(100vh - 64px/* - 48px*/);
+            height: calc(100vh - 64px);
         }
         webview {
             overflow: hidden;
@@ -25,17 +25,6 @@
         :root {
             --paper-toolbar-background: #eee;
             --paper-toolbar-color: #333;
-        }
-
-        .paper-header {
-            background-color: var(--paper-indigo-500);
-            color: white;
-        }
-        .title {
-            pointer-events: auto;
-        }
-        .title wolfram-bar {
-            width: calc(100vw - 248px);
         }
     </style>
 
@@ -53,17 +42,11 @@
                 <paper-icon-button icon="home"></paper-icon-button>
 
                 <div class="title">
-                    <wolfram-bar></wolfram-bar>
+                    <wolfram-input></wolfram-input>
                 </div>
 
                 <paper-icon-button icon="more-vert"></paper-icon-button>
             </paper-toolbar>
-
-            <!-- <paper-tabs selected="0">
-                <paper-tab>TAB 1</paper-tab>
-                <paper-tab>TAB 2</paper-tab>
-                <paper-tab>TAB 3</paper-tab>
-            </paper-tabs> -->
         </div>
 
         <div class="page"></div>
