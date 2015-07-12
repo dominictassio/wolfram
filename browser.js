@@ -31,7 +31,7 @@ window.onload = function() {
         controls.forward.disabled = !this.canGoForward();
 
         // Why doesn't this work?
-        /*this.executeJavaScript({
+        /*this.executeScript({
             code: "document.querySelector('meta[name=theme-color]').content"
         }, function(result) {
             console.log(result);
